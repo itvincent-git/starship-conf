@@ -1,0 +1,58 @@
+# ========== 全局格式 ==========
+format = """
+$directory$git_branch$git_status$nodejs$python
+$character
+"""
+
+# ========== 目录 ==========
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+style = "bold cyan"
+home_symbol = "~"
+read_only = " 󰌾"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+# ========== Git 分支 ==========
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+# ========== Git 状态 ==========
+[git_status]
+style = "red"
+format = "([$all_status$ahead_behind]($style)) "
+conflicted = "⚔️ "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕${ahead_count}/${behind_count}"
+modified = "!"
+staged = "+"
+untracked = "?"
+renamed = "»"
+deleted = "✘"
+
+# ========== Node ==========
+[nodejs]
+symbol = " "
+style = "green"
+format = "[$symbol($version )]($style)"
+
+# ========== Python ==========
+[python]
+symbol = "🐍 "
+style = "bold green"
+format = "[$symbol$version ($virtualenv)]($style)"
+
+# ========== 命令耗时 ==========
+[cmd_duration]
+min_time = 2000
+format = "⏱ [$duration]($style) "
+style = "dimmed white"
+
+# ========== 提示符 ==========
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold yellow)"
